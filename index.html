@@ -1,0 +1,219 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Быстрая прокачка Skyrim</title>
+<style>
+body { margin:0; font-family:Arial,sans-serif; background:url("https://i.pinimg.com/originals/a1/d9/d6/a1d9d671c79165408f28a1c64860018b.jpg") no-repeat center center fixed; background-size:cover; color:#fff; }
+.overlay { background:rgba(0,0,0,0.85); min-height:100vh; padding:20px; }
+h1,h2,h3 { text-align:center; }
+nav,.subnav { text-align:center; margin:15px 0; }
+button { padding:10px 16px; margin:5px; font-size:16px; cursor:pointer; background:rgba(255,255,255,0.1); color:#fff; border:1px solid #aaa; border-radius:5px; transition:0.3s ease; }
+.main-btn:hover { background:#1e90ff; border-color:#1e90ff; box-shadow:0 0 10px #1e90ff; }
+.sub-btn:hover { background:#cc2b2b; border-color:#cc2b2b; box-shadow:0 0 10px #cc2b2b; }
+button.active { box-shadow:0 0 15px #ffcc00; }
+.section, .skill { display:none; max-width:1000px; margin:auto; }
+.section.active, .skill.active { display:block; }
+ul { line-height:1.6; }
+/* Мобильная адаптация */
+@media (max-width: 600px) {
+  button { font-size:14px; padding:8px 12px; }
+  ul { font-size:14px; }
+}
+</style>
+</head>
+<body>
+<div class="overlay">
+<h1>Быстрая прокачка Skyrim</h1>
+
+<nav>
+<button id="btnCombat" class="main-btn active" onclick="showSection('combat')">Оружие и броня</button>
+<button id="btnMagic" class="main-btn" onclick="showSection('magic')">Магия</button>
+<button id="btnStealth" class="main-btn" onclick="showSection('stealth')">Воровство и стелс</button>
+</nav>
+
+<!-- ================= ОРУЖИЕ И БРОНЯ ================= -->
+<div id="combat" class="section active">
+<h2>Оружие и броня</h2>
+<div class="subnav">
+<button id="btnOneHand" class="sub-btn active" onclick="showSkill('oneHand')">Одноручное</button>
+<button id="btnTwoHand" class="sub-btn" onclick="showSkill('twoHand')">Двуручное</button>
+<button id="btnArchery" class="sub-btn" onclick="showSkill('archery')">Луки</button>
+<button id="btnBlock" class="sub-btn" onclick="showSkill('block')">Блок</button>
+<button id="btnLight" class="sub-btn" onclick="showSkill('light')">Лёгкая броня</button>
+<button id="btnHeavy" class="sub-btn" onclick="showSkill('heavy')">Тяжёлая броня</button>
+<button id="btnSmith" class="sub-btn" onclick="showSkill('smith')">Кузнечное дело</button>
+</div>
+
+<!-- Одноручное -->
+<div id="oneHand" class="skill active">
+<h3>Одноручное оружие</h3>
+<ul>
+<li>Используй мечи и кинжалы против слабых врагов для быстрого опыта.</li>
+<li>Комбинируй с зачарованиями для увеличения урона и опыта.</li>
+<li>Тренируйся на манекенах и NPC для безопасного фарма.</li>
+<li>Повторяй квесты с массовыми врагами для стабильного роста навыка.</li>
+<li>Используй зелья и еду для ускоренного повышения.</li>
+</ul>
+</div>
+
+<!-- Двуручное -->
+<div id="twoHand" class="skill">
+<h3>Двуручное оружие</h3>
+<ul>
+<li>Применяй двуручное оружие против сильных врагов для быстрого апа.</li>
+<li>Сочетай с силовыми заклинаниями или зачарованной броней.</li>
+<li>Используй тренировку с союзниками для безопасного фарма.</li>
+<li>Повторяй квесты с массовыми врагами для стабильного опыта.</li>
+<li>Используй сон и еду для бонусов к опыту.</li>
+</ul>
+</div>
+
+<!-- Луки -->
+<div id="archery" class="skill">
+<h3>Луки</h3>
+<ul>
+<li>Тренируйся на мишенях или врагах на расстоянии.</li>
+<li>Комбинируй с зачарованными стрелами и луками.</li>
+<li>Используй бонусы от зелий и еды для ускоренного опыта.</li>
+<li>Сон и отдых повышают получаемый опыт.</li>
+<li>Повторяй квесты с дальним боем для стабильного апа.</li>
+</ul>
+</div>
+
+<!-- Блок -->
+<div id="block" class="skill">
+<h3>Блок</h3>
+<ul>
+<li>Используй щит для защиты от атак врагов в локациях с великанами и драуграми.</li>
+<li>Низкая сложность ускоряет прокачку навыка.</li>
+<li>Комбинируй с лечением и регенерацией выносливости.</li>
+<li>Используй зелья и супы для восстановления сил.</li>
+<li>Тренируй блок вместе с атакой для максимального опыта.</li>
+</ul>
+</div>
+
+<!-- Лёгкая броня -->
+<div id="light" class="skill">
+<h3>Лёгкая броня</h3>
+<ul>
+<li>Тренируйся на драуграх и слабых врагах для безопасного апа.</li>
+<li>Используй бонусы от зелий, еды и сна.</li>
+<li>Комбинируй с навыками скрытности для ускоренного опыта.</li>
+<li>Постоянно улучшай броню на верстаке для бонуса.</li>
+<li>Повторяй квесты и фарм локации для стабильного роста навыка.</li>
+</ul>
+</div>
+
+<!-- Тяжёлая броня -->
+<div id="heavy" class="skill">
+<h3>Тяжёлая броня</h3>
+<ul>
+<li>Используй локации с великанами для опыта.</li>
+<li>Сон и еда ускоряют прокачку навыка.</li>
+<li>Не перемещайся слишком часто, чтобы бонусы не сбрасывались.</li>
+<li>Комбинируй с лечением и регенерацией выносливости.</li>
+<li>Сочетай с квестами для быстрого опыта.</li>
+</ul>
+</div>
+
+<!-- Кузнечное дело -->
+<div id="smith" class="skill">
+<h3>Кузнечное дело</h3>
+<ul>
+<li>Начинай с крафта железных кинжалов и мечей.</li>
+<li>Собирай руду и металлолом для улучшения брони и оружия.</li>
+<li>Используй зелья и зачарования для бонусов.</li>
+<li>Сон в собственной постели даёт +10% опыта, камень-хранитель Воина +20%.</li>
+<li>Повторяй крафт и фарм материалов для максимального апа.</li>
+</ul>
+</div>
+</div>
+
+<!-- ================= МАГИЯ ================= -->
+<div id="magic" class="section">
+<h2>Магия</h2>
+<div class="subnav">
+<button id="btnDest" class="sub-btn active" onclick="showSkill('dest')">Разрушение</button>
+<button id="btnRest" class="sub-btn" onclick="showSkill('rest')">Восстановление</button>
+<button id="btnIllusion" class="sub-btn" onclick="showSkill('illusion')">Иллюзия</button>
+<button id="btnConjuration" class="sub-btn" onclick="showSkill('conjuration')">Призывание</button>
+<button id="btnAlteration" class="sub-btn" onclick="showSkill('alteration')">Изменение</button>
+<button id="btnEnchant" class="sub-btn" onclick="showSkill('enchant')">Зачарование</button>
+</div>
+
+<div id="dest" class="skill active">
+<h3>Разрушение</h3>
+<ul>
+<li>Используй заклинания разрушения по врагам для опыта.</li>
+<li>Комбинируй с зачарованными предметами и зельями.</li>
+<li>Учись у магов и через книги для бонуса опыта.</li>
+<li>Фарм массовых врагов ускоряет рост навыка.</li>
+<li>Следи за магической регенерацией для непрерывного апа.</li>
+</ul>
+</div>
+
+<div id="rest" class="skill">
+<h3>Восстановление</h3>
+<ul>
+<li>Применяй заклинания лечения и зелья на союзников и себя.</li>
+<li>Сон в безопасном месте повышает опыт.</li>
+<li>Используй зачарования для усиления эффектов восстановления.</li>
+<li>Комбинируй с квестами, где необходимо лечить NPC.</li>
+<li>Повторяй действия регулярно для стабильного апа навыка.</li>
+</ul>
+</div>
+
+<div id="illusion" class="skill">
+<h3>Иллюзия</h3>
+<ul>
+<li>Используй заклинания страха, спокойствия или слепоты на врагов.</li>
+<li>Комбинируй с зачарованной экипировкой для усиления эффекта.</li>
+<li>Фармируй слабых врагов для опыта.</li>
+<li>Используй тренировки в колегии магии для ускоренного апа.</li>
+<li>Повторяй квесты с массовыми врагами для опыта.</li>
+</ul>
+</div>
+
+<div id="conjuration" class="skill">
+<h3>Призывание</h3>
+<ul>
+<li>Призывай существ для помощи в бою для опыта.</li>
+<li>Комбинируй с зачарованными предметами.</li>
+<li>Учись у магов и через книги для ускоренного апа.</li>
+<li>Фармируй врагов с помощью призываемых существ.</li>
+<li>Повторяй квесты для стабильно роста навыка.</li>
+</ul>
+</div>
+
+<div id="alteration" class="skill">
+<h3>Изменение</h3>
+<ul>
+<li>Используй заклинания усиления защиты и оружия.</li>
+<li>Комбинируй с зачарованными предметами.</li>
+<li>Учись у магов для опыта.</li>
+<li>Фармируй врагов с усилением заклинаний.</li>
+<li>Повторяй тренировки и квесты для роста навыка.</li>
+</ul>
+</div>
+
+<div id="enchant" class="skill">
+<h3>Зачарование</h3>
+<ul>
+<li>Зачаровывай оружие и броню для бонусов к навыку.</li>
+<li>Используй книги и столы зачарования.</li>
+<li>Комбинируй с крафтом и зелиями для ускоренного апа.</li>
+<li>Фармируй материалы для зачарования.</li>
+<li>Повторяй процесс для максимального опыта.</li>
+</ul>
+</div>
+</div>
+
+<!-- ================= ВОРОВСТВО ================= -->
+<div id="stealth" class="section">
+<h2>Воровство и стелс</h2>
+<div class="subnav">
+<button id="btnSneak" class="sub-btn active" onclick="showSkill('sneak')">Скрытность</button>
+<button id="btnPickpocket" class="sub-btn" onclick="showSkill('pickpocket')">Карманные кражи</button>
+<button id="btnLockpicking" class="sub-btn" onclick="showSkill('lockpicking')">Взлом замков</button>
+<button id="btnThievery" class="sub-btn" onclick="show
