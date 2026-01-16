@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Быстрые способы прокачки в Skyrim</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #f0f0f0;
+  background: url("https://i.pinimg.com/originals/a1/d9/d6/a1d9d671c79165408f28a1c64860018b.jpg")
+    no-repeat center center fixed;
+  background-size: cover;
+}
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: -1;
+}
+header, nav, footer {
+  text-align: center;
+  padding: 20px;
+}
+nav button {
+  margin: 5px;
+  padding: 10px;
+  background: #222;
+  color: #fff;
+  border: 1px solid #555;
+}
+main {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  background: rgba(20,20,20,0.85);
+  border-radius: 10px;
+}
+.content { display: none; }
+.content.active { display: block; }
+h2, h3 { color: gold; }
+</style>
+</head>
+
+<body>
+<div class="overlay"></div>
+
+<header>
+<h1>Быстрые способы прокачки в Skyrim</h1>
+<p>Полноценный гайд по прокачке</p>
+</header>
+
+<nav>
+<button onclick="show('gear')">⚔️ Оружие и доспехи</button>
+<button onclick="show('magic')">🧙 Магия</button>
+<button onclick="show('stealth')">🗡️ Воровство</button>
+</nav>
+
+<main>
+<section id="gear" class="content active">
+<h2>Кузнечное дело</h2>
+<p>Крафти железные кинжалы и двемерские луки.</p>
+</section>
+
+<section id="magic" class="content">
+<h2>Магия</h2>
+<p>Используй заклинания для быстрой прокачки.</p>
+</section>
+
+<section id="stealth" class="content">
+<h2>Стелс</h2>
+<p>Кради у спящих NPC и прокачивай скрытность.</p>
+</section>
+</main>
+
+<footer>
+<p>Skyrim © Bethesda</p>
+</footer>
+
+<script>
+function show(id){
+  document.querySelectorAll('.content').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+</script>
+
+</body>
+</html>
